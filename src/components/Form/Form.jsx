@@ -11,7 +11,7 @@ export class Form extends Component {
           title=""
           required
         />
-        <button type="button">Add contact </button>
+        <button type="button">Add contact</button>
       </form>
     );
   }
