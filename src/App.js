@@ -5,8 +5,7 @@ import { Contacts } from './components/Contacts/Contacts';
 class App extends Component {
   state = {
     contacts: [],
-    name: '',
-    number: '',
+    filter: '',
   };
 
   formSubmitData = data => {
@@ -21,7 +20,7 @@ class App extends Component {
         <h2>Phonebook</h2>
         <Form onSubmit={this.formSubmitData} />
         <h2>Contacts</h2>
-        <Contacts />
+       <Contacts props={this.state.contacts}/>
       </div>
     );
   }
