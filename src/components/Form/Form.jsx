@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from './Form.module.css';
 
 export class Form extends Component {
   state = {
@@ -24,8 +25,9 @@ export class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="">Name</label>
+        <span className={styled.span}>Name</span>
         <input
+          className={styled.input}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -35,8 +37,9 @@ export class Form extends Component {
           required
           onChange={this.handleChange}
         />
-        <label htmlFor="">Number</label>
+        <span className={styled.span}>Number</span>
         <input
+          className={styled.input}
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -46,7 +49,7 @@ export class Form extends Component {
           required
           onChange={this.handleChange}
         />
-        <button type="submit">Add contact</button>
+        <button type="submit" className={styled.button}>Add contact</button>
       </form>
     );
   }

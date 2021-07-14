@@ -1,16 +1,22 @@
 import React from 'react';
+import styled from './ContactList.module.css';
 
 export function ContactList({ contacts, onDeleteContact }) {
   return (
-    <ul>
+    <ul className={styled.list}>
       {contacts.map(contact => {
         return (
-          <li key={contact.id}>
-            {' '}
-            <p>
-              {contact.name}: {contact.number}
-            </p>
-            <button onClick={() => onDeleteContact(contact.id)}>Удалить</button>
+          <li key={contact.id} className={styled.item}>
+            <div className={styled.contact}>
+              <span className={styled.span}>{contact.name} : </span>
+              <span className={styled.span}> {contact.number}</span>
+              <button
+                onClick={() => onDeleteContact(contact.id)}
+                className={styled.button}
+              >
+                Remove
+              </button>
+            </div>
           </li>
         );
       })}
